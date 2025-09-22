@@ -54,7 +54,6 @@ export default function ProposalApp() {
     setTimeout(() => setFlowers([]), 5000);
   };
 
-  // Steps data
   const stepsData = [
     {
       question: `Hey ${name}, do you like me? 💖`,
@@ -93,8 +92,10 @@ export default function ProposalApp() {
     },
   ];
 
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-pink-200 to-purple-300 px-4 overflow-hidden">
+    <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-pink-200 to-purple-300 px-4 overflow-hidden">
       {/* Flowers */}
       {flowers.map((flower) => (
         <span
@@ -111,7 +112,7 @@ export default function ProposalApp() {
         </span>
       ))}
 
-      <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl text-center relative w-full max-w-sm min-h-[300px] flex flex-col justify-center">
+      <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl text-center relative w-full max-w-sm min-h-[300px] flex flex-col justify-center mb-8">
         {/* Step 0: Name input */}
         {step === 0 && (
           <div>
@@ -177,6 +178,11 @@ export default function ProposalApp() {
           </div>
         )}
       </div>
+
+      {/* Footer */}
+      <footer className="text-white text-sm mb-4">
+        Created by Tanjid Ahammed Tasin © {currentYear}
+      </footer>
 
       {/* CSS animation */}
       <style>
